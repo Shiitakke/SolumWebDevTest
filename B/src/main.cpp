@@ -12,12 +12,12 @@ int main (void) {
     uint64_t  budget = stoll(raw_total);
     //find max number first, the min can be calculated from it
     if (budget & 1 || budget < 4) {
-      // Odd numbers cannot be attained, and must be 4 or greater
+      // Odd numbers cannot be attained, neither can values smaller than 4
       std::cout << "-1" << std::endl;
       continue;
     }
-    // Either it is divisible perfectly, do nothing 
-    // or there is only two left over, remove 1 a add 1 b
+    // Either it is divisible perfectly -> do nothing 
+    // or there is only two remainder -> remove 1 a add 1 b
     // Either way, max count still stays the same
     uint64_t a_count = (budget / 4);
     uint64_t b_count = 0;
